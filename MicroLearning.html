@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en"
+      data-bs-theme="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Astro v5.9.2">
+
+    <title>Bérengère Soulas - Portfolio</title>
+
+    <!-- CSS link -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta name="theme-color" content="#712cf9">
+    <link href="carousel.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: #0000001a;
+            border: solid rgba(0,0,0,.15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em #0000001a,inset 0 .125em .5em #00000026
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden
+        }
+
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch
+            }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500
+        }
+
+            .bd-mode-toggle .bi {
+                width: 1em;
+                height: 1em
+            }
+
+            .bd-mode-toggle .dropdown-menu .active .bi {
+                display: block !important
+            }
+    </style>
+</head>
+
+<body>
+    <!-- JS link -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+        </symbol>
+
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+        </symbol>
+
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+        </symbol>
+
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+        </symbol>
+
+    </svg>
+
+    <!-- Header -->
+    </div>
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Bérengère Soulas</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="profil.html">Profil</a></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Scénarisation.html">Scénarisation Pédagogique</a>
+                        </li>
+
+                        <li class="nav-item"> <a class="nav-link" href="ApprentissageAd.html">Apprentissage adaptatif</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="IA.html">Créations IA</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Jumbotron full width -->
+    <<section class="bg-light text-dark d-flex flex-column justify-content-center align-items-center text-center py-5"
+              style="min-height: 50vh; background: linear-gradient(135deg, #f8f9fa 0%, #e0e0e0 100%);">
+        <div class="container" style="max-width: 600px;">
+            <h1 class="display-4 fw-bold mb-4">⏱️ Micro Learning</h1>
+        </div>
+    </section>
+
+
+    <main>
+        <div class="container my-5" id="section-main-content">
+
+            <!-- Escape game – Vidéo full-width  -->
+            <section class="mb-5">
+                <!-- Vidéo large -->
+                <div class="ratio ratio-16x9 mb-4" style="min-height: 500px;">
+                    <video src="videos/capsule.mp4" controls style="width: 100%; border-radius: 12px;">
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                    </video>
+                </div>
+            </section>
+
+            <div class="container my-5 p-4 rounded-3" style="background-color: rgba(13, 110, 253, 0.05);">
+                <h2 class="h4 text-primary mb-4">Capsule Micro Learning : Présent Perfect vs Past</h2>
+
+                <ul class="timeline list-unstyled ps-0">
+                    <li class="mb-4">
+                        <div class="d-flex align-items-start">
+                            <div>
+                                <p class="fs-5 mb-1"><strong>Logiciel:</strong> Génially</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <ul class="timeline list-unstyled ps-0">
+                        <li class="mb-4">
+                            <div class="d-flex align-items-start">
+                                <div>
+                                    <p class="fs-5 mb-1"><strong>Conception ciblée :</strong> Capsule micro learning pour clarifier la différence entre le présent perfect et le passé simple.</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mb-4">
+                            <div class="d-flex align-items-start">
+                                <div>
+                                    <p class="fs-5 mb-1"><strong>Apprentissage séquencé :</strong> Le module combine vidéo explicative, recap et quiz.</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mb-0">
+                            <div class="d-flex align-items-start">
+                                <div>
+                                    <p class="fs-5 mb-1"><strong>Contenu efficace :</strong> Un apprentissage court, adaptatif et conçu pour répondre à des besoins précis ( introduction du concept, révision).</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+
+            <style>
+                /* Timeline styling */
+                .timeline li {
+                    position: relative;
+                    padding-left: 40px;
+                }
+
+                    .timeline li::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 16px;
+                        width: 4px;
+                        background-color: #0d6efd;
+                        border-radius: 2px;
+                    }
+
+                .timeline .timeline-icon {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 32px;
+                    height: 32px;
+                    font-size: 16px;
+                    color: #fff;
+                    flex-shrink: 0;
+                    margin-top: 4px;
+                }
+
+                /* Timeline responsive spacing */
+                @media (max-width: 768px) {
+                    .timeline li {
+                        padding-left: 35px;
+                    }
+
+                    .timeline .timeline-icon {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+            </style>
+
+
+    </main>
+
+    <!-- Modal Contact -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Travaillons ensemble !</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Formulaire -->
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Add access key -->
+
+                        <input type="hidden" name="access_key" value="ff2658e4-afaf-4d3e-9875-29c9a657b12c">
+                        <input type="hidden" name="subject" value="Nouveau message depuis le portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio – Bérengère Soulas">
+                        <input type="checkbox" name="botcheck" style="display:none">
+
+                        <!-- Nom -->
+                        <div class="mb-3">
+                            <label for="name1" class="form-label fw-bold text-start d-block mb-2">Nom</label>
+                            <input type="text" class="form-control" id="name1" name="name" placeholder="Votre nom" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email1" class="form-label fw-bold text-start d-block mb-2">Email</label>
+                            <input type="email" class="form-control" id="email1" name="email" placeholder="nom@exemple.fr" required>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-3">
+                            <label for="message1" class="form-label fw-bold text-start d-block mb-2">Message</label>
+                            <textarea class="form-control" id="message1" name="message" rows="4" placeholder="Votre message" required></textarea>
+                        </div>
+
+                        <!-- Bouton Envoyer -->
+                        <button type="submit" class="btn btn-primary w-100">
+                            Envoyer
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Sticky Contact Button -->
+    <a href="#" class="btn btn-outline-primary btn-lg fw-bold"
+       style=" position: fixed; bottom: 20px; right: 20px; z-index: 1000; border-radius: 0.5rem; "
+       data-bs-toggle="modal" data-bs-target="#contactModal">
+        Contactez-moi
+    </a>
+
+
+</body>
+</html>
